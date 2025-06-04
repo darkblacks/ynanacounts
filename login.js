@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Salva dados na sessionStorage
     sessionStorage.setItem('usuario', data.username || 'Aventureiro')
     sessionStorage.setItem('acess_lvl', data.acess_lvl || '1')
+    sessionStorage.setItem('reader_writer', data.reader_writer || '')
 
     window.location.href = 'index.html'
   })
