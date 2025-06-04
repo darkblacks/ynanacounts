@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login – Os Contos de Ynana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #f4e2c8;
+      background-blend-mode: multiply;
+      background-size: cover;
+      font-family: 'Spectral SC', serif;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: #4a2e14;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: clamp(150px, 30vw, 200px);
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      align-self: flex-start;
+      font-size: 1.05rem;
+      color: #583913;
+      margin-bottom: 0.6rem;
+      text-align: left;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1.2rem;
+      font-family: inherit;
+      color: #3a2a15;
+    }
+
+    .btn-back {
+      margin-top: 1rem;
+      background: transparent;
+      border: 2px solid #4a2e14;
+      color: #4a2e14;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-back:hover {
+      background: #4a2e14;
+      color: #fff;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      font-family: inherit;
+      background: #d4af37;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-login:hover {
+      background: #b58e2e;
+    }
+
+    .btn-login:active {
+      transform: scale(0.97);
+    }
+
+    footer {
+      width: 100%;
+      padding: 1rem 0;
+      background: rgba(0, 0, 0, 0.05);
+      text-align: center;
+      font-size: 0.9rem;
+      color: #4a2e14;
+      opacity: 0.7;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Login</h1>
+
+  <form id="login-form">
+    <img class="logo" src="logo.png" alt="Os Contos de Ynana">
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+
+    <label for="password">Senha</label>
+    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+
+    <button type="submit" class="btn-login">Entrar</button>
+    <button type="button" class="btn-back" onclick="location.href='index.html'">← Voltar</button>
+  </form>
+
+  <footer>
+    © 2025 Os Contos de Ynana. Todos os direitos reservados.
+  </footer>
+
+  <script type="module" src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificação de E-mail – Ynana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #f4e2c8;
+      font-family: 'Spectral SC', serif;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #4a2e14;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #3a2a15;
+    }
+
+    .btn-login {
+      display: none;
+      margin-top: 2rem;
+      padding: 0.8rem 1.6rem;
+      background: #d4af37;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .btn-login:hover {
+      background: #b58e2e;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Confirmando sua Aventura...</h1>
+  <p id="msg">Aguarde alguns instantes. A magia está sendo conjurada...</p>
+
+  <button id="btn-login" class="btn-login" onclick="location.href='login.html'">
+    Entrar no Portal
+  </button>
+
+  <script type="module" src="autt.js"></script>
+</body>
+</html>

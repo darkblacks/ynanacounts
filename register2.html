@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bem-vindo(a) – Os Contos de Ynana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #f4e2c8;
+      background-blend-mode: multiply;
+      background-size: cover;
+      font-family: 'Spectral SC', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      color: #4a2e14;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #3b2710;
+      margin-bottom: 1rem;
+    }
+
+    .logo {
+      width: clamp(120px, 20vw, 160px);
+      margin: 1rem auto;
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.6rem;
+      background: #d4af37;
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #b58e2e;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #5f4021;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img class="logo" src="logo.png" alt="Logo Os Contos de Ynana">
+    <h1>Obrigada por se registrar!</h1>
+    <p>Antes de embarcar nos ventos de Albahara, confirme seu e-mail para ativar sua conta.</p>
+    <p>Verifique sua caixa de entrada e clique no link de confirmação enviado para você.</p>
+    <button class="btn" onclick="location.href='index2.html'">Voltar para o Início</button>
+    <footer>
+      © 2025 Os Contos de Ynana. Todos os direitos reservados.
+    </footer>
+  </div>
+
+</body>
+</html>

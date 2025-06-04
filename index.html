@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Ynana – Escolha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap" rel="stylesheet" />
+<style>
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY COM FUNDO DE TAPEÇARIA */
+body {
+  min-height: 100vh;
+  background: url('background.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Spectral SC', serif;
+  padding: 1rem;          
+  color: #f4e2c8;         
+}
+
+/* QUADRO DE COURO (CONTEÚDO PRINCIPAL) */
+.quadro-de-couro {
+  background: rgba(52, 36, 24, 0.85);
+  border: 8px solid #a57b4b;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;        
+  max-width: 1100px;      
+  width: 100%;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.quadro-de-couro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px dashed rgba(165, 123, 75, 0.8);
+  border-radius: 10px;
+  margin: 8px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* LOGO (BANNER PAISAGEM) */
+.logo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 90%;
+  max-width: 1000px;    
+  height: auto;
+  max-height: 300px;    
+  object-fit: contain;
+
+  /* REMOVIDO:
+  border: 4px solid rgba(165, 123, 75, 0.9);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  */
+}
+
+/* TEXTO DE BOAS-VINDAS */
+#welcome {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #f4e2c8;
+  min-height: 3em;
+  white-space: pre-wrap;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* NOME DO USUÁRIO LOGADO */
+#user-logado {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #e5d0a9;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* CONTAINER DE BOTÕES */
+.buttons-container {
+  display: flex;
+  gap: 2rem;            
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* WRAPPER DO BOTÃO */
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* IMAGENS CIRCULARES DOS BOTÕES */
+.round-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.button-wrapper:hover .round-img {
+  animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.15); }
+  50%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* BOTÃO MEDIEVAL */
+.botao-medieval img {
+  width: 250px;
+  max-width: 80%;
+  height: auto;
+  opacity: 0.2;
+  transition: transform 0.2s, opacity 0.3s;
+  cursor: pointer;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+}
+
+.botao-medieval:hover img {
+  content: url('comecealera.png');
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* BOTÃO DE LOGOUT */
+#logout-btn {
+  margin-top: 1rem;
+  padding: 0.65rem 1.2rem;
+  background: #d4af37;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+#logout-btn:hover {
+  background: #b58e2e;
+}
+
+/* RODAPÉ */
+footer {
+  width: 100%;
+  padding: 0.8rem 0;
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #e5d0a9;
+  opacity: 0.9;
+  margin-top: auto;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .quadro-de-couro {
+    max-width: 95%;
+  }
+  .logo {
+    max-width: 90%;
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quadro-de-couro {
+    max-width: 700px; 
+  }
+  .logo {
+    max-width: 650px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons-container {
+    gap: 1rem;
+  }
+  .round-img {
+    width: 40vw;
+    max-width: 100px;
+    height: auto;
+  }
+  .botao-medieval img {
+    width: 50vw;
+  }
+}
+</style>
+</head>
+<body>
+  <div id="user-logado"></div>
+  <div class="quadro-de-couro">
+    <img class="logo" src="teste.png" alt="Os Contos de Ynana" />
+
+    <h1 id="welcome"></h1>
+    
+
+    <div class="buttons-container">
+      <div class="button-wrapper">
+        <a href="register.html">
+          <img class="round-img" src="button_register.png" alt="Registrar-se" />
+        </a>
+      </div>
+      <div class="button-wrapper">
+        <a href="login.html">
+          <img class="round-img" src="button_login.png" alt="Login" />
+        </a>
+      </div>
+    </div>
+<button id="logout-btn" style="display:none;">Sair</button>
+    <div class="botao-medieval">
+      <a href="leia.html">
+        <img src="button_comecealera.png" alt="Ynana: Comece a ler" tabindex="0" />
+      </a>
+    </div>
+
+    
+  </div>
+
+  <footer>
+    © 2025 Os Contos de Ynana. Todos os direitos reservados.
+  </footer>
+
+  <script type="module" src="index2.js"></script>
+</body>
+</html>

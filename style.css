@@ -1,0 +1,138 @@
+/* Tipografia antiga e suave */
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4ecd8 url('papel-textura.jpg') repeat;
+  color: #3b2f2f;
+  font-family: 'Cardo', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  padding: 2rem;
+}
+
+/* Container geral como um livro */
+.livro-container {
+  max-width: 1000px;
+  margin: auto;
+  border: 8px solid #9c7b56;
+  border-image: url('ornamento-borda.png') 30 stretch;
+  background-color: #fffef5;
+  padding: 3rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Capa do livro */
+.capa {
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #9c7b56;
+}
+
+.capa h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px #d8c39a;
+}
+
+.subtitulo {
+  font-style: italic;
+  color: #6b5845;
+  margin-bottom: 1rem;
+}
+
+/* Navegação estilo grimório */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #4c3c2e;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  border-color: #aa845f;
+}
+
+/* Páginas do livro */
+.pagina {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: #fcf7e8;
+  border: 1px solid #d6c5a1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 15px #e3d3b5;
+}
+
+.pagina h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5c432a;
+  border-bottom: 1px solid #c8ae8c;
+  padding-bottom: 0.3rem;
+}
+
+/* Galeria de lugares */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.galeria figure {
+  width: 280px;
+  text-align: center;
+  background: #f8f1df;
+  border: 2px solid #bfa176;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(110, 85, 45, 0.2);
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.galeria figcaption {
+  font-size: 1rem;
+  color: #6a513a;
+  font-style: italic;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #99866f;
+  border-top: 1px dashed #b6a386;
+  padding-top: 1rem;
+}
+
+.pagina {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pagina.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
