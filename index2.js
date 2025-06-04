@@ -3,9 +3,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const nomeUsuario = sessionStorage.getItem('usuario') || null;
   const acessLvl = sessionStorage.getItem('acess_lvl') || null;
+  const readerWriter = sessionStorage.getItem('reader_writer') || null;
 
   const welcomeEl = document.getElementById('welcome');
   const userEl = document.getElementById('user-logado');
+  const authButtons = document.getElementById('auth-buttons');
+  const userButtons = document.getElementById('user-buttons');
+  const adminButtons = document.getElementById('admin-buttons');
+  const writerArea = document.getElementById('writer-area');
+  const adminToggle = document.getElementById('admin-toggle');
+  const userToggle = document.getElementById('user-toggle');
+  const logoutArea = document.getElementById('logout-area');
   const logoutBtn = document.getElementById('logout-btn');
 
   // Texto dinâmico com ou sem nome
@@ -26,12 +34,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // Exibir nome do usuário, se logado
   if (nomeUsuario) {
     userEl.textContent = `Usuário logado: ${nomeUsuario}`;
-    logoutBtn.style.display = 'inline-block';
+    authButtons.style.display = 'none';
+    userButtons.style.display = 'flex';
 
-    // Clique no botão "Sair"
+    if (readerWriter && readerWriter.toLowerCase() === 'writer') {
+      writerArea.style.display = 'flex';
+    }
+
+    logoutArea.style.display = 'flex';
     logoutBtn.addEventListener('click', () => {
       sessionStorage.clear();
       window.location.reload();
     });
+
+    if (acessLvl && acessLvl.toLowerCase() === 'admin') {
+      adminToggle.style.display = 'flex';
+      adminToggle.addEventListener('click', () => {
+        userButtons.style.display = 'none';
+        adminButtons.style.display = 'flex';
+        adminToggle.style.display = 'none';
+        userToggle.style.display = 'flex';
+      });
+      userToggle.addEventListener('click', () => {
+        adminButtons.style.display = 'none';
+        userButtons.style.display = 'flex';
+        userToggle.style.display = 'none';
+        adminToggle.style.display = 'flex';
+      });
+    }
+  } else {
+    authButtons.style.display = 'flex';
+    logoutArea.style.display = 'none';
+    adminToggle.style.display = 'none';
+    userToggle.style.display = 'none';
   }
 });

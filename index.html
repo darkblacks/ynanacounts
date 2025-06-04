@@ -109,6 +109,7 @@ body {
 .round-img {
   width: 140px;
   height: 140px;
+  display: block;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.5rem;
@@ -140,27 +141,23 @@ body {
 }
 
 .botao-medieval:hover img {
-  content: url('comecealera.png');
+  content: url('button_comecealera.png');
   transform: scale(1.05);
   opacity: 1;
 }
 
-/* BOTÃO DE LOGOUT */
-#logout-btn {
+/* BARRA INFERIOR */
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 1rem;
-  padding: 0.65rem 1.2rem;
-  background: #d4af37;
-  color: #1a1a1a;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+.bottom-bar .botao-medieval {
+  flex: 1;
+  text-align: center;
 }
 
-#logout-btn:hover {
-  background: #b58e2e;
-}
 
 /* RODAPÉ */
 footer {
@@ -183,16 +180,6 @@ footer {
   .logo {
     max-width: 90%;
     max-height: 250px;
-  }
-}
-
-@media (max-width: 768px) {
-  .quadro-de-couro {
-    max-width: 700px; 
-  }
-  .logo {
-    max-width: 650px;
-    max-height: 200px;
   }
 }
 
@@ -219,7 +206,7 @@ footer {
     <h1 id="welcome"></h1>
     
 
-    <div class="buttons-container">
+    <div class="buttons-container" id="auth-buttons">
       <div class="button-wrapper">
         <a href="register.html">
           <img class="round-img" src="button_register.png" alt="Registrar-se" />
@@ -231,11 +218,57 @@ footer {
         </a>
       </div>
     </div>
-<button id="logout-btn" style="display:none;">Sair</button>
-    <div class="botao-medieval">
-      <a href="leia.html">
-        <img src="button_comecealera.png" alt="Ynana: Comece a ler" tabindex="0" />
-      </a>
+
+    <div class="buttons-container" id="user-buttons" style="display:none;">
+      <div class="button-wrapper">
+        <img class="round-img" src="button_assinatura.png" alt="Assinatura" />
+      </div>
+      <div class="button-wrapper">
+        <img class="round-img" src="button_meuperfil.png" alt="Meu Perfil" />
+      </div>
+      <div class="button-wrapper">
+        <img class="round-img" src="button_favoritar.png" alt="Favoritar Personagem" />
+      </div>
+      <div class="button-wrapper">
+        <img class="round-img" src="button_resgatar.png" alt="Resgatar Recompensa" />
+      </div>
+      <div class="button-wrapper">
+        <img class="round-img" src="button_perfil_escritor.png" alt="Perfil do Escritor" />
+      </div>
+      <div class="button-wrapper" id="writer-area" style="display:none;">
+        <img class="round-img" src="button_gerenciar_artigos.png" alt="Gerenciar Artigos" />
+      </div>
+    </div>
+
+    <div class="buttons-container" id="admin-buttons" style="display:none;">
+      <div class="button-wrapper">
+        <img class="round-img" src="button_dashboard.png" alt="Dashboard Administrativo" />
+      </div>
+      <div class="button-wrapper">
+        <img class="round-img" src="button_gerenciar_contas.png" alt="Gerenciar Contas" />
+      </div>
+      <div class="button-wrapper">
+        <img class="round-img" src="button_acesso.png" alt="Gerenciar Níveis de Acesso" />
+      </div>
+      <div class="button-wrapper">
+        <img class="round-img" src="button_add_recompensa.png" alt="Adicionar Recompensas" />
+      </div>
+    </div>
+    <div class="bottom-bar" id="bottom-bar">
+      <div class="button-wrapper" id="admin-toggle" style="display:none;">
+        <img class="round-img" src="button_admin.png" alt="ADMIN" />
+      </div>
+      <div class="button-wrapper" id="user-toggle" style="display:none;">
+        <img class="round-img" src="button_user.png" alt="User" />
+      </div>
+      <div class="botao-medieval">
+        <a href="leia.html">
+          <img src="button_comecealer.png" alt="Ynana: Comece a ler" tabindex="0" />
+        </a>
+      </div>
+      <div class="button-wrapper" id="logout-area" style="display:none;">
+        <img id="logout-btn" class="round-img logout-btn" src="button_logout.png" alt="Logout" />
+      </div>
     </div>
 
     
